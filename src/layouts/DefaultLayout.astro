@@ -3,7 +3,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
 const {title} = Astro.props
-let subtitle = 'Accessible Astro Starter'
+let subtitle = 'Easybank Landing Page'
 ---
 <html lang="en" dir="ltr">
   <head>
@@ -47,6 +47,9 @@ let subtitle = 'Accessible Astro Starter'
     <!-- footer -->
     <Footer />
 
+    <!-- responsive overlay -->
+    <div class="responsive-overlay"></div>
+
   </body>
 </html>
 
@@ -64,5 +67,22 @@ let subtitle = 'Accessible Astro Starter'
 
     main { flex: 1 0 auto; }
     footer { flex-shrink: 0; }
+  }
+
+  .responsive-overlay {
+    position: absolute;
+    background-image: linear-gradient(to bottom, var(--primary-clr-100), 90%, var(--neutral-clr-400));
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: 0.3s;
+
+    &.show {
+      opacity: 0.8;
+      z-index: 2;
+    }
   }
 </style>
