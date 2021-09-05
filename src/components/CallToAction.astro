@@ -1,0 +1,35 @@
+<button class="call-to-action">Request Invite</button>
+
+<style lang="scss">
+@use "../styles/base/size" as *;
+
+.call-to-action {
+  color: var(--neutral-clr-400);
+  background: linear-gradient(to right, var(--primary-clr-200), var(--primary-clr-300));
+  font-weight: 700;
+  @include size-14;
+  border-radius: 2rem;
+  padding: 0.75rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.call-to-action::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 2rem;
+  background: var(--primary-clr-100);
+  z-index: -1;
+  transition: opacity 0.25s ease-in-out;
+  opacity: 0;
+}
+
+.call-to-action:hover::before,
+.call-to-action:focus::before {
+  opacity: 1;
+}
+</style>
