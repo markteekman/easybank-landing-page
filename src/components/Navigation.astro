@@ -1,8 +1,10 @@
-<nav id="main-navigation">
+<nav id="main-navigation" class="main-navigation">
   <ul>
     <li><a href="#" aria-current="page">Home</a></li>
     <li><a href="#">About</a></li>
     <li><a href="#">Contact</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Careers</a></li>
   </ul>
 </nav>
 
@@ -53,13 +55,105 @@
 </script>
 
 <style lang="scss">
-  nav > ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  @use "../styles/base/space" as *;
 
-    @media (min-width: 35rem) {
-      flex-direction: row;
+  .main-navigation {
+    position: absolute;
+    top: $space-96;
+    left: 1.25rem;
+    right: 1.25rem;
+    padding: 1.5rem;
+    background-color: var(--neutral-clr-400);
+    border-radius: 6px;
+    opacity: 0;
+    z-index: 3;
+    transition: opacity 0.3s;
+
+    :global(~ .call-to-action) {
+      display: none;
+    }
+
+    &.show {
+      opacity: 1;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+        color: var(--primary-clr-100);
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus,
+      a[aria-current="page"] {
+        text-decoration: underline;
+      }
+
+      a[aria-current="page"] {
+        font-weight: bold;
+      }
+    }
+
+    // desktop styling
+    @media (min-width: 920px) {
+      display: block;
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 1;
+      padding: 0.25rem;
+
+      :global(~ .call-to-action) {
+        display: block;
+      }
+
+      ul {
+        flex-direction: row;
+        gap: 0.75rem;
+
+        li {
+          min-width: 6ch;
+        }
+
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-size: 0.95rem;
+          padding: 1rem 0;
+        }
+
+        a::after {
+          content: '';
+          display: block;
+          width: 60px;
+          height: 5px;
+          position: absolute;
+          bottom: 0;
+          background: linear-gradient(to right, var(--primary-clr-200), var(--primary-clr-300));
+          opacity: 0;
+          transition: opacity 0.2s ease-in-out
+        }
+
+        a:hover::after,
+        a:focus::after,
+        a[aria-current="page"]::after {
+          opacity: 1;
+        }
+
+        a:hover,
+        a:focus,
+        a[aria-current="page"] {
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
     }
   }
 </style>
