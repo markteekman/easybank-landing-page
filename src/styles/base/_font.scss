@@ -15,11 +15,13 @@
 
 body {
   color: var(--font-color);
+  background-color: (--background);
   font-family: var(--font-family-default);
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  @include size-18;
 
   *:focus {
     @include outline;
@@ -100,13 +102,13 @@ body {
 
   h1,
   h2 {
-    font-weight: 800;
+    font-weight: 400;
   }
 
   h3,
   h4,
   h5,
   h6 {
-    font-weight: 600;
+    font-weight: 400;
   }
 }

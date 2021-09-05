@@ -24,21 +24,12 @@
   // font measure
   --font-measure: 70ch;
   // font family
-  --font-family-default: "Open Sans", sans-serif;
-  --font-family-special: "Open Sans", sans-serif;
-  // light color scheme
-  --font-color: var(--neutral-clr-900);
-  --action-color: var(--secondary-clr-500);
-  --background: var(--neutral-clr-0);
+  --font-family-default: "Public Sans", sans-serif;
+  --font-family-special: "Public Sans", sans-serif;
+  // default color scheme
+  --font-color: var(--primary-clr-100);
+  --action-color: var(--primary-clr-300);
+  --background: var(--neutral-clr-400);
   --primary-background: var(--primary-clr-100);
-  --neutral-background: var(--neutral-clr-200);
-}
-
-// dark color scheme
-.darkmode {
-  --font-color: var(--neutral-clr-0);
-  --action-color: var(--secondary-clr-100);
-  --background: var(--neutral-clr-800);
-  --primary-background: var(--primary-clr-500);
-  --neutral-background: var(--neutral-clr-900);
+  --neutral-background: var(--neutral-clr-400);
 }

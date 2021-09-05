@@ -86,6 +86,7 @@ button {
   border-radius: 0;
   background-color: transparent;
   line-height: 1;
+  border: none;
 }
 
 button * {
@@ -128,4 +129,5 @@ noscript {
 // remove outline from negative tab indexes
 [tabindex="-1"] {
   outline: none !important;
+  box-shadow: none !important;
 }
