@@ -66,8 +66,6 @@
     background-color: var(--neutral-clr-400);
     border-radius: 6px;
     opacity: 0;
-    z-index: 3;
-    transition: opacity 0.3s;
 
     :global(~ .call-to-action) {
       display: none;
@@ -75,6 +73,7 @@
 
     &.show {
       opacity: 1;
+      transition: opacity 0.3s;
     }
 
     ul {
@@ -91,11 +90,8 @@
       a:hover,
       a:focus,
       a[aria-current="page"] {
-        text-decoration: underline;
-      }
-
-      a[aria-current="page"] {
         font-weight: bold;
+        text-decoration: underline;
       }
     }
 
@@ -150,7 +146,6 @@
         a:hover,
         a:focus,
         a[aria-current="page"] {
-          font-weight: bold;
           text-decoration: none;
         }
       }

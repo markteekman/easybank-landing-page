@@ -1,0 +1,124 @@
+---
+import CallToAction from '../components/CallToAction.astro'
+---
+<section class="hero padding-32">
+  <div class="container">
+    <div class="grid">
+      <div class="cell small-12 medium-7 space-content hero__intro">
+        <h1 tabindex="-1">Next generation digital banking</h1>
+        <p>Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.</p>
+        <CallToAction />
+      </div>
+    </div>
+  </div>
+</section>
+<div class="mockups">
+  <img src="/assets/image-mockups.png" alt="">
+</div>
+
+<style lang="scss">
+  @use "../styles/base/breakpoint" as *;
+  @use "../styles/base/size" as *;
+
+  .hero {
+    position: relative;
+    background-color: var(--neutral-clr-300);
+    background-image: url('/assets/bg-intro-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right -100px;
+
+    @include breakpoint(450) { background-position: right -200px; }
+    @include breakpoint(580) { background-position: right -250px; }
+
+    @include breakpoint(650) {
+      background-size: cover;
+      background-position: right -350px;
+    }
+
+    @include breakpoint(medium) {
+      background-image: url('/assets/bg-intro-desktop.svg');
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: right -830px top -270px;
+      height: 70vh;
+    }
+
+    @include breakpoint(1120) { background-position: right -650px top -270px; }
+    @include breakpoint(large) { background-position: right -550px top -270px; }
+    @include breakpoint(huge) { background-position: right -420px top -270px; }
+
+    .container,
+    .grid,
+    .cell {
+      height: 100%;
+    }
+
+    .hero__intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 300px;
+      margin-bottom: 100px;
+
+      @include breakpoint(medium) {
+        align-items: flex-start;
+        margin-top: 0;
+      }
+    }
+
+    h1,
+    p {
+      text-align: center;
+
+      @include breakpoint(medium) {
+        text-align: left;
+      }
+    }
+
+    h1 {
+      @include size-48;
+
+      @include breakpoint(medium) {
+        font-size: 4rem;
+        line-height: 4.5rem;
+      }
+    }
+
+    p {
+      color: var(--neutral-clr-100);
+      max-width: 42ch;
+      @include size-20;
+    }
+  }
+
+  .mockups {
+    position: absolute;
+    top: -55px;
+    right: 1rem;
+    left: 1rem;
+
+    @include breakpoint(450) { top: -120px; }
+    @include breakpoint(500) { top: -200px; }
+    @include breakpoint(550) { top: -250px; }
+    @include breakpoint(600) { top: -300px; }
+    @include breakpoint(650) { top: -350px; }
+    @include breakpoint(700) { top: -400px; }
+    @include breakpoint(750) { top: -450px; }
+
+    @include breakpoint(medium) {
+      top: -55px;
+      right: -450px;
+      left: auto;
+    }
+
+    @include breakpoint(1120) { right: -250px; }
+
+    @include breakpoint(large) {
+      top: -55px;
+      right: -120px;
+      left: auto;
+    }
+  }
+</style>

@@ -1,32 +1,45 @@
 ---
+import CallToAction from '../components/CallToAction.astro'
 import Navigation from '../components/Navigation.astro'
+import ResponsiveToggle from '../components/ResponsiveToggle.astro'
 import SkipLinks from '../components/SkipLinks.astro'
 ---
 <header>
   <SkipLinks client:load />
-  <section class="space-16 color-neutral">
+  <section>
     <div class="container">
-      <img src="/assets/logo.svg" alt="Your Logo">
+      <img src="/assets/logo.svg" alt="Easybank">
+      <ResponsiveToggle client:load />
       <Navigation client:load />
+      <CallToAction />
     </div>
   </section>
 </header>
 
 <style lang="scss">
-  .container  {
-    gap: 1rem;
-    
-    img {
-      max-height: 40px;
-      align-self: flex-start;
+  @use "../styles/base/space" as *;
+
+  header {
+    background-color: var(--neutral-clr-400);
+    padding: $space-16 0;
+    z-index: 2;
+
+    @media (min-width: 920px) {
+      padding: 0;
     }
+  }
 
+  .container  {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-
+    
     @media (min-width: 35rem) {
       flex-direction: row;
+    }
+
+    img {
+      max-height: 40px;
     }
   }
 </style>
