@@ -1,0 +1,57 @@
+---
+const {img, author, title} = Astro.props
+---
+<div class="card">
+  <div class="card__image">
+    <img src="{`/assets/image-${img}.jpg`}" alt="">
+  </div>
+  <div class="card__inner">
+    <div class="card__author">By {author}</div>
+    <a href="#" class="card__link">
+      <h3 class="card__title">{title}</h3>
+    </a>
+    <p class="card__description"><slot /></p>
+  </div>
+</div>
+
+<style lang="scss">
+  @use "../styles/base/size" as *;
+  @use "../styles/base/space" as *;
+
+  .card {
+    background-color: var(--neutral-clr-400);
+    border-radius: 0.5rem;
+
+    .card__image {
+      display: flex;
+      aspect-ratio: 4 / 3;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem
+      }
+    }
+
+    .card__inner {
+      display: flex;
+      flex-direction: column;
+      gap: $space-8;
+      padding: $space-24;
+    }
+
+    .card__author {
+      @include size-12;
+    }
+
+    .card__title {
+      @include size-20;
+    }
+
+    .card__description {
+      color: var(--neutral-clr-100);
+      @include size-14;
+    }
+  }
+</style>
