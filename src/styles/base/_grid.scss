@@ -14,6 +14,7 @@
 // used variables and mixins
 @use "sass:math";
 @use "breakpoint" as *;
+@use "space" as *;
 $grid-columns: 12 !default;
 $container-width: 1200px !default;
 $calc: math.div(100%, $grid-columns) !default;
@@ -21,11 +22,11 @@ $calc: math.div(100%, $grid-columns) !default;
 // default container setting
 .container {
   margin: 0 auto;
-  padding: 0 calc(#{var(--gap-default) / 2});
+  padding: 0 $space-24;
   max-width: 100%;
 
   @include breakpoint(medium) {
-    padding: 0 calc(#{var(--gap-default)});
+    padding: 0 $space-32;
   }
 
   @include breakpoint(large) {
