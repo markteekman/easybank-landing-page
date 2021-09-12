@@ -53,8 +53,31 @@ let subtitle = 'Easybank Landing Page'
   </body>
 </html>
 
+<script>
+  const animations = [...document.querySelectorAll('.animate')]
+
+  // create observer
+  const callback = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+      }
+      
+      if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+        entry.target.classList.remove('visible')
+      }
+    })
+  }
+
+  const observer = new IntersectionObserver(callback)
+
+  // observe boxes
+  animations.forEach(animation => observer.observe(animation))
+</script>
+
 <style lang="scss">
-  // sticky footer on low content pages
+  @use "../styles/base/breakpoint" as *;
+
   html,
   body {
     height: 100%;
@@ -71,6 +94,23 @@ let subtitle = 'Easybank Landing Page'
 
     footer { 
       flex-shrink: 0; 
+    }
+  }
+
+  :global(.animate) {
+    opacity: 0;
+    transform: translateY(5rem);
+    transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+
+      @include breakpoint(medium) {
+        &:nth-child(2) { transition-delay: 0.15s; }
+        &:nth-child(3) { transition-delay: 0.3s; }
+        &:nth-child(4) { transition-delay: 0.45s; }
+      }
     }
   }
 
