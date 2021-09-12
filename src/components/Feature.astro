@@ -1,0 +1,33 @@
+---
+const {img, title} = Astro.props
+---
+<div class="feature animate">
+  <img src="{`/assets/icon-${img}.svg`}" alt="" class="feature__icon">
+  <h3 class="feature__title">{title}</h3>
+  <p class="feature__description"><slot /></p>
+</div>
+
+<style lang="scss">
+  @use "../styles/base/breakpoint" as *;
+  @use "../styles/base/space" as *;
+
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-24;
+
+    @include breakpoint(medium) {
+      align-items: flex-start;
+    }
+
+    .feature__title,
+    .feature__description {
+      text-align: center;
+
+      @include breakpoint(medium) {
+        text-align: left;
+      }
+    }
+  }
+</style>
