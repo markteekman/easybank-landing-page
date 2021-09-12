@@ -38,8 +38,8 @@ As a bonus I want to achieve the following extra challenges:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://your-solution-url.com)
+- [Live Site URL](https://frontend-mentor.markteekman.nl/easybank-landing-page)
 
 ## My process
 
