@@ -38,7 +38,7 @@ As a bonus I want to achieve the following extra challenges:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
+- [Solution URL](https://markteekman.github.io/easybank-landing-page/)
 - [Live Site URL](https://frontend-mentor.markteekman.nl/easybank-landing-page)
 
 ## My process
