@@ -8,7 +8,7 @@
   </ul>
 </nav>
 
-<script hoist>
+<script>
   // variables
   const mainNav = document.querySelector('.main-navigation')
   const mainMenu = mainNav.querySelector('ul')
@@ -55,6 +55,7 @@
 </script>
 
 <style lang="scss">
+  @use "../styles/base/breakpoint" as *;
   @use "../styles/base/space" as *;
 
   .main-navigation {
@@ -96,7 +97,7 @@
     }
 
     // desktop styling
-    @media (min-width: 920px) {
+    @include breakpoint(920) {
       display: block;
       position: relative;
       top: 0;
