@@ -38,8 +38,8 @@ As a bonus I want to achieve the following extra challenges:
 
 ### Links
 
-- [Solution URL](https://markteekman.github.io/easybank-landing-page/)
-- [Live Site URL](https://frontend-mentor.markteekman.nl/easybank-landing-page)
+- [Solution URL](https://www.frontendmentor.io/solutions/astro-static-site-builder-wcag-accessibility-and-intersectoinobserver-vvRI73kFt)
+- [Live Site URL](https://markteekman.github.io/easybank-landing-page/)
 
 ## My process
 
