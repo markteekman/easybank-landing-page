@@ -4,7 +4,7 @@ import CallToAction from '../components/CallToAction.astro'
 <section class="hero padding-32">
   <div class="container">
     <div class="grid">
-      <div class="cell small-12 medium-7 space-content hero__intro">
+      <div class="cell small-12 medium-7 space-content hero__intro animate">
         <h1 tabindex="-1">Next generation digital banking</h1>
         <p>Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.</p>
         <CallToAction />
@@ -42,6 +42,7 @@ import CallToAction from '../components/CallToAction.astro'
       background-size: auto;
       background-position: right -830px top -270px;
       height: 70vh;
+      min-height: 30%;
     }
 
     @include breakpoint(1120) { background-position: right -650px top -270px; }
@@ -65,6 +66,22 @@ import CallToAction from '../components/CallToAction.astro'
       @include breakpoint(medium) {
         align-items: flex-start;
         margin-top: 0;
+      }
+
+      > :global(*) {
+        opacity: 0;
+        transform: translateY(5rem);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      }
+
+      &.visible {
+        > :global(*) {
+          opacity: 1;
+          transform: translateY(0);
+
+          &:nth-child(2) { transition-delay: 0.05s; }
+          &:nth-child(3) { transition-delay: 0.1s; }
+        }
       }
     }
 
