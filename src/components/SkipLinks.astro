@@ -1,10 +1,7 @@
 <section>
 	<div class="container">
-    <nav class="skip-links" role="navigation" aria-label="Skiplinks">
+    <nav class="skip-links" aria-label="Skiplinks">
       <ul>
-
-        <!-- NOTE: add this when you have content or hyperlinks to skip before you main menu!
-        <li><a href="#main-navigation" data-skip-link>Skip to main menu</a></li> -->
         <li><a href="#main-content" data-skip-link>Skip to main content</a></li>
       </ul>
     </nav>
@@ -27,14 +24,6 @@
         // prevent default anchor behaviour
         event.preventDefault()
         const target = event.target.getAttribute('href')
-
-        // NOTE: add this when you have content or hyperlinks to skip before you main menu!
-        // set focus to first menu item for skip link to main navigation
-        // if (target === '#main-navigation') {
-        //   const navigation = document.querySelector('#main-navigation')
-        //   navigation.querySelector('a').focus()
-        // }
-
         // set focus to first h1 for skip link to main content
         if (target === '#main-content') {
           document.querySelector('h1').focus()
