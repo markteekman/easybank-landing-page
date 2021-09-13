@@ -99,6 +99,6 @@ I learned how to add a transition to background gradients.The `background` CSS p
 - [Personal Website](https://www.markteekman.nl)
 - [Frontend Mentor Profile](https://www.frontendmentor.io/profile/markteekman)
 - [LinkedIn Page](https://nl.linkedin.com/in/markteekman)
-- [GitHub Projects](https://nl.linkedin.com/in/markteekman)
+- [GitHub Projects](https://github.com/markteekman)
 - [NPM Packages](https://www.npmjs.com/~markteekman)
 - [CodePen Creations](https://codepen.io/markteekman)
