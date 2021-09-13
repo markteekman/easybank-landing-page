@@ -6,14 +6,14 @@ import SkipLinks from '../components/SkipLinks.astro'
 ---
 <header>
   <SkipLinks client:load />
-  <section>
+  <div>
     <div class="container">
       <img src="/assets/logo.svg" alt="Easybank Logo">
       <ResponsiveToggle client:load />
       <Navigation client:load />
       <CallToAction />
     </div>
-  </section>
+  </div>
 </header>
 
 <style lang="scss">
@@ -21,7 +21,7 @@ import SkipLinks from '../components/SkipLinks.astro'
 
   header {
     background-color: var(--neutral-clr-400);
-    padding: $space-16 0;
+    padding: $space-8 0;
     z-index: 2;
 
     @media (min-width: 920px) {
