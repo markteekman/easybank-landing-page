@@ -15,14 +15,12 @@
 @use "space" as *;
 
 // color tokens
-section {
-  &.color-neutral {
-    background-color: var(--neutral-background);
-  }
+.color-neutral {
+  background-color: var(--neutral-background);
+}
 
-  &.color-primary {
-    background-color: var(--primary-background);
-  }
+.color-primary {
+  background-color: var(--primary-background);
 }
 
 // elevation tokens
