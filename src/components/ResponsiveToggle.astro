@@ -3,22 +3,45 @@
 </button>
 
 <script>
+  // variables
   const responsiveToggle = document.querySelector('.responsive-toggle')
 
-  responsiveToggle.addEventListener('click', event => {
+  // functions
+  const openMenu = (toggle) => {
+    toggle.setAttribute('aria-expanded', true)
+    toggle.setAttribute('aria-label', 'Close menu navigation')
+    toggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"><g fill="#2D314D" fill-rule="evenodd"><path d="M.868.661l16.97 16.97-.706.708L.162 1.369z"/><path d="M.161 17.632L17.131.662l.708.706-16.97 16.97z"/></g></svg>'
+  }
+
+  const closeMenu = (toggle) => {
+    toggle.setAttribute('aria-expanded', false)
+    toggle.setAttribute('aria-label', 'Open menu navigation')
+    toggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="11"><g fill="#2D314D" fill-rule="evenodd"><path d="M0 0h24v1H0zM0 5h24v1H0zM0 10h24v1H0z"/></g></svg>'
+  }
+  
+  // execution
+  responsiveToggle.addEventListener('click', _ => {
     const mainNavigation = document.querySelector('.main-navigation')
     const responsiveOverlay = document.querySelector('.responsive-overlay')
+
     mainNavigation.classList.toggle('show')
     responsiveOverlay.classList.toggle('show')
 
-    if (mainNavigation.classList.contains('show')) {
-      responsiveToggle.setAttribute('aria-expanded', true)
-      responsiveToggle.setAttribute('aria-label', 'Close menu navigation')
-      responsiveToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="19"><g fill="#2D314D" fill-rule="evenodd"><path d="M.868.661l16.97 16.97-.706.708L.162 1.369z"/><path d="M.161 17.632L17.131.662l.708.706-16.97 16.97z"/></g></svg>'
-    } else {
-      responsiveToggle.setAttribute('aria-expanded', false)
-      responsiveToggle.setAttribute('aria-label', 'Open menu navigation')
-      responsiveToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="11"><g fill="#2D314D" fill-rule="evenodd"><path d="M0 0h24v1H0zM0 5h24v1H0zM0 10h24v1H0z"/></g></svg>'
+    mainNavigation.classList.contains('show')
+      ? openMenu(responsiveToggle)
+      : closeMenu(responsiveToggle)
+  })
+
+  // check if responsive menu is open when resized and then remove 
+  window.addEventListener('resize', _ =>{
+    const mainNavigation = document.querySelector('.main-navigation')
+    const responsiveOverlay = document.querySelector('.responsive-overlay')
+
+    if (mainNavigation.classList.contains('show') && window.matchMedia("(min-width: 920px)").matches) {
+      mainNavigation.classList.remove('show')
+      responsiveOverlay.classList.remove('show')
+
+      closeMenu(responsiveToggle)
     }
   })
 </script>
