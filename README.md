@@ -51,6 +51,8 @@ As a bonus I want to achieve the following extra challenges:
 - CSS Grid
 - Mobile-first workflow
 - WCAG 2.1 best practices
+- CSS Animations
+- JavaScript IntersectionObserver API
 - [Astro](https://astro.build) - Astro Static Site Generator
 - [Accessible Astro Starter](https://github.com/markteekman/accessible-astro-starter) - My own starter template for Astro
 
