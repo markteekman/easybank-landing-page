@@ -58,7 +58,7 @@ As a bonus I want to achieve the following extra challenges:
 
 ### What I learned
 
-I learned how to add a transition to background gradients.The `background` CSS property can not be transitioned by default. A solution I found online is where you add the hover effect on the before pseudo element and use the transition on the opacity property:
+- I learned how to add a transition to background gradients.The `background` CSS property can not be transitioned by default. A solution I found online is where you add the hover effect on the before pseudo element and use the transition on the opacity property:
 
 ```scss
 .call-to-action {
@@ -88,6 +88,14 @@ I learned how to add a transition to background gradients.The `background` CSS p
 }
 ```
 
+- I (re)learned how to handle the layout shift that happens when you try to use `font-weight: bold` as a hover effect on, in this case, the menu items. I solved it by setting `min-width: 6ch` on the wrapping `li`. This prevents the shift in layout because the added width of the bold font weight is now contained inside of that min-width of the `li`:
+
+```scss
+li {
+  min-width: 6ch;
+}
+```
+
 ### Continued development
 
 - What I found difficult was how to properly size the Hero background SVG and the mockup images for responsive sizes. I used a lot of breakpoints to resize them for a lot of different screen widths. I can't imagine this being the best solution, because it's a very tedious and error prone approach. I want to learn more on creating such sections in a more elegant way and I'm hoping to learn that by looking at the solutions of others.
@@ -95,6 +103,8 @@ I learned how to add a transition to background gradients.The `background` CSS p
 ### Useful resources
 
 - [Background gradient transition](https://keithjgrant.com/posts/2017/07/transitioning-gradients/) - This is the example I used to create the transition on the button.
+- [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) - The MDN documentation on how to use the Intersection Observer API.
+- [Intersection Observer Example](https://codepen.io/markteekman/pen/jOyXKpE) - An example I made in a CodePen of how to use the Intersection Observer.
 
 ## Author
 
